@@ -10,4 +10,6 @@ import { IProduct } from 'src/app/models/products';
 
 export class ProductComponent {
   @Input() product: IProduct
+
+  details:boolean = false
 }

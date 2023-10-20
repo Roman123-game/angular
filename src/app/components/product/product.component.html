@@ -1,3 +1,24 @@
-<h1>Qui ut laborum quis nostrud. Nisi proident eu laborum pariatur ipsum sunt. Do enim qui sit aliquip ipsum veniam.
+<div class="py-4 px-6 border rounded flex items-center flex-col mb-2">
+  <img [src]="product.image" [alt]="product.title" class="w-1/6 mb-2">
+  <h2 class="mb-2 text-md text-center">{{ product.title }}</h2>
+  <p>Price: <span class="font-bold">{{ product.price | currency:'RUB' }}</span></p>
 
-Qui esse deserunt aute amet cillum eu ullamco esse. Tempor consectetur aute aute enim ullamco. Sit irure eiusmod esse nostrud aliqua consectetur. Minim aliquip anim nisi ut. Culpa excepteur voluptate et elit et anim ullamco ullamco. Laboris ut in fugiat laborum elit. Velit est excepteur veniam ex est nulla in enim deserunt proident laboris eu.</h1>
+   <button class="border py-2 px-4 rounded" (click)="details = !details">
+    {{ details ? 'Hide' : 'Show' }} Details
+  </button>
+
+
+
+  <div *ngIf="details">
+    <p>{{ product.description }}</p>
+    <p>Rate: <span [ngStyle]="{fontWeight: 'bold'}">
+      {{ product.rating.rate | number:'1.2-4' }}
+    </span></p>
+  </div>
+</div>
+
+
+<!-- [ngClass]="{
+  'bg-yellow-400': !details,
+  'bg-blue-400': details
+}" -->
