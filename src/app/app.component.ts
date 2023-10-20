@@ -8,7 +8,7 @@ import {products as data}from './data/products'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular';
+  title = 'Angular';
 
-  product: IProduct[] = data
+  products: IProduct[] = data
 }
