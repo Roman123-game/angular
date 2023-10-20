@@ -4,7 +4,7 @@
     {{title}}
     </h1>
     <app-product
-    *ngFor="let product of products" [product]="product">
+    *ngFor="let product of products" [product]="product" let i = index>
   </app-product>
 
 </div>
