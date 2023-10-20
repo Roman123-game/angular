@@ -21,8 +21,8 @@ getAll(): Observable<IProduct[]>{
     fromObject:{limit:5}
   })
  }).pipe(
-  delay(2000),
   retry(2),
+  delay(2000),
   catchError(this.errorHandler.bind(this))
 
   )

@@ -11,6 +11,7 @@ export class AppComponent implements OnInit{
   title = 'Angular';
   products: IProduct[] = [];
   loading = false;
+  term =''
 
   constructor(private productsService:ProductService){
 
