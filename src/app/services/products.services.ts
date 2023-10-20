@@ -1,6 +1,6 @@
 import { Observable} from "rxjs";
 import {Injectable} from '@angular/core'
-import {HttpClient} from '@angular/common/http'
+import {HttpClient,HttpParams} from '@angular/common/http'
 import { IProduct } from "../models/products";
 
 
@@ -13,6 +13,12 @@ constructor(private http: HttpClient){
 
 }
 getAll(): Observable<IProduct[]>{
- return this.http.get<IProduct[]>('https://fakestoreapi.com/products')
+ return this.http.get<IProduct[]>('https://fakestoreapi.com/products', {
+  params: new HttpParams({
+    fromObject:{
+      limit:5
+    }
+  })
+ })
 }
 }

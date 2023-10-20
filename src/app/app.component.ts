@@ -8,18 +8,19 @@ import { ProductService } from './services/products.services';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-
   title = 'Angular';
-
-  products: IProduct[] = []
+  products: IProduct[] = [];
+  loading = false;
 
   constructor(private productsService:ProductService){
 
   }
 
   ngOnInit(): void{
+    this.loading= true
     this.productsService.getAll().subscribe((products)=>{
       this.products  = products
+      this.loading = false
     })
 
   };
